@@ -111,7 +111,7 @@ resource "aws_eks_node_group" "devopsshack" {
   instance_types = ["t2.large"]
 
   remote_access {
-    ec2_ssh_key = "bluegreen"
+    ec2_ssh_key = var.key_name
     source_security_group_ids = [aws_security_group.devopsshack_node_sg.id]
   }
 }
